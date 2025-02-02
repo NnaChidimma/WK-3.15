@@ -1,0 +1,33 @@
+# Demonstrating functional programming concepts: map and filter
+numbers = [1, 2, 3, 4, 5, 6]
+# Double each number using map
+doubled = list(map(lambda x: x * 2, numbers))
+print("Doubled numbers:", doubled)
+# Filter to get only even numbers
+evens = list(filter(lambda x: x % 2 == 0, numbers))
+print("Even numbers:", evens)
+
+#Solution
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class FunctionalProgramming {
+    public static void main(String[] args) {
+        // List of numbers
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6);
+
+        // Double each number using map()
+        List<Integer> doubled = numbers.stream()
+                .map(x -> x * 2)
+                .collect(Collectors.toList());
+        System.out.println("Doubled numbers: " + doubled);
+
+        // Filter to get only even numbers using filter()
+        List<Integer> evens = numbers.stream()
+                .filter(x -> x % 2 == 0)
+                .collect(Collectors.toList());
+        System.out.println("Even numbers: " + evens);
+    }
+}
