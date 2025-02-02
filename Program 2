@@ -1,0 +1,31 @@
+# Using list comprehensions for functional programming
+squares = [x**2 for x in range(10)]
+evens_squared = [x**2 for x in range(10) if x % 2 == 0]
+print("Squares of 0-9:", squares)
+print("Squares of even numbers 0-9:", evens_squared)
+
+#Solution
+
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
+public class ListComprehensions {
+    public static void main(String[] args) {
+        // Generate squares for numbers 0-9
+        List<Integer> squares = IntStream.range(0, 10)
+                .map(x -> x * x)
+                .boxed()
+                .collect(Collectors.toList());
+        System.out.println("Squares of 0-9: " + squares);
+
+        // Generate squares of even numbers 0-9
+        List<Integer> evensSquared = IntStream.range(0, 10)
+                .filter(x -> x % 2 == 0)
+                .map(x -> x * x)
+                .boxed()
+                .collect(Collectors.toList());
+        System.out.println("Squares of even numbers 0-9: " + evensSquared);
+    }
+}
+
